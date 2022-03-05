@@ -10,5 +10,5 @@ print(message)
 #
 # File "apostrophe.py", line 1
 # message = 'One of Python's strengths is its diverse community.'
-# ^u
+# 
 # SyntaxError: invalid syntax
