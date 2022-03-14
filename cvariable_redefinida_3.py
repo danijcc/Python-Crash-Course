@@ -31,3 +31,17 @@ variableDeControl = "variable definida"
 print(variableDeControl)
 variableDeControl = "misma variable redefinida"
 print(variableDeControl)
+
+miVariable = "hola desde Python"
+print (miVariable)
+
+#Enteros
+x = 10
+y = 2
+z = x + y
+print(z)
+
+#Direcciones de memoria o posisiones de memoria las literales 
+# se almacenan en una direccio de memoria la recuperamos mediante la funcion id()
+print (id(x))
+
