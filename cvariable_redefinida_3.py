@@ -41,7 +41,8 @@ y = 2
 z = x + y
 print(z)
 
-#Direcciones de memoria o posisiones de memoria las literales 
-# se almacenan en una direccio de memoria la recuperamos mediante la funcion id()
+#Direcciones de memoria ram o posiciones de memoria, las literales de
+#las variables se almacenan en una direccion de memoria la recuperamos
+#mediante la funcion id() 
 print (id(x))
 
