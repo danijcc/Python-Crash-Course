@@ -14,3 +14,18 @@ print("Hello, " + full_name.title() + "!")
 message = ("Hello, " + full_name.title() + "!")
 print(message)
 
+#FORMA 1 DE CONCATENAR CADENAS
+miGrupoFavorito = "Nightwish" +" "+ "the best rock band"
+print("mi grupo favorito es: " + miGrupoFavorito)
+
+#FORMA 2 DE CONCATENAR CADENAS
+miGrupoFavorito = "Nightwish" 
+comentario = "the best rock band"
+print("mi grupo favorito es:", miGrupoFavorito, comentario)
+
+# funcion int() convierte la variable a un tipo entero 
+numero1 = "1"
+numero2 = "2"
+print ("Concatenacion", numero1 + numero2)
+print("Suma:", int(numero1) + int (numero2))
+
