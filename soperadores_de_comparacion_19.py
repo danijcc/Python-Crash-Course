@@ -24,3 +24,4 @@ print(f'Resultado < : {resultado}')
 #evalua si (a) es menor o igual que (b)
 resultado = a <= b
 print(f'Resultado <= : {resultado}')
+
