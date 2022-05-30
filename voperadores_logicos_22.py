@@ -1,3 +1,4 @@
+#video: 4.-operadores en python-> 7.-operadores logicos
 #los operadores logicos son (and,or,not) permite comparar expreciones booleanas
 
 #and devuelve True si ambos operadores son true (a and b)
