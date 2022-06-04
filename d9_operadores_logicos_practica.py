@@ -1,4 +1,4 @@
-#video:4-operadores en python-> 8.-ejercicio operadores logicos
+#Carpeta:4-operadores en python-> 8.-ejercicio operadores logicos
 valor = int(input('escribe el valor: '))
 valorMinimo = 0
 valorMaximo = 5

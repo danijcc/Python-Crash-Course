@@ -1,4 +1,4 @@
-#video:4-operadores en python-> 11.-ejercicio operadores logicos
+#Carpeta:4-operadores en python-> 11.-ejercicio operadores logicos Rango entre 20's y 30's
 edad = int(input('Introduce tu edad: '))
 
 veintes = edad >= 20 and edad < 30
