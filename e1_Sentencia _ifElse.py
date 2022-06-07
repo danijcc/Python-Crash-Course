@@ -1,5 +1,5 @@
 #Carpeta 5: Video 1: Sentencias o estructura de Control if else
-condicion = True
+condicion = False
 
 if condicion == True:
     print('Condicion verdadera')
