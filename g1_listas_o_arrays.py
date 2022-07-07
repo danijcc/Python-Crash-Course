@@ -17,7 +17,7 @@ print(nombres[0:])
 #cambiar valor 
 nombres[3] = 'ivone'
 print (nombres)
-#iterar lista se recomienda declarar la variable en singular y la loista en plural
+#iterar lista se recomienda declarar la variable en singular y la lista en plural
 for nombre in nombres:
     print(nombre)
 else:
