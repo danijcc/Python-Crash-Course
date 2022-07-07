@@ -1,4 +1,5 @@
-#carpeta 7 video 1 y 2
+#carpeta 7 video 1, 2 y 3
+from turtle import clear
 nombres = ['juan','karla','ricardo','maria']
 #imprimir la lista nombres
 print (nombres)
@@ -21,4 +22,23 @@ for nombre in nombres:
     print(nombre)
 else:
     print('No existen mas nombres en la lista')
-    
+#preguntar el largo de una lista
+print (len(nombres))
+#insertar un elemento en un indice en especifico
+nombres.insert(1,'octavio')
+print(nombres)
+#remover un elemento
+nombres.remove('octavio')
+print(nombres)
+#remover el ultimo valor agragado
+nombres.pop()
+print(nombres)
+#eliminar un indice
+del nombres[0]
+print(nombres)
+#limpar la lista
+nombres.clear()
+print(nombres)
+#borrar la lista por completo
+del nombres 
+print(nombres)
