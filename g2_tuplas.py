@@ -14,9 +14,10 @@ print(frutas[0:1])#sin incluir el ultimo indice
 frutaUnica = ('manzana',)
 print(frutaUnica)
 
-#recorrer elementos de una tupla
+#recorrer elementos de una tupla con un for
 for fruta in frutas:
     print(fruta, end=' ')
+#'\n'salto de linea 
 
 #cambiar de tupla a lista para modificar un valor
 frutasLista = list(frutas)
