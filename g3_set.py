@@ -32,5 +32,5 @@ print(planetas)
 planetas.clear()
 print(planetas)
 
-#eliminar set por completo
+#eliminar la variable set por completo
 del planetas

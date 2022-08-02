@@ -1,5 +1,5 @@
 #carpeta 7 video 4 y 5
-#una tupla basicamente es una lista que no se puede modificar es inmutable
+#una tupla() basicamente es una lista que no se puede modificar es inmutable
 frutas = ('manzana','pera','uva','fresa')
 print(frutas)
 #saber el largo de una tupla

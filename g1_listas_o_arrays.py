@@ -1,3 +1,4 @@
+#listas[] 
 #carpeta 7 video 1, 2 y 3
 from turtle import clear
 nombres = ['juan','karla','ricardo','maria']
