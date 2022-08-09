@@ -1,14 +1,13 @@
-# PYTHON ES UN LENGUAJE INTERPRETADO QUE ESTA INSTALADO EN LA MAYORIA DE LAS 
+# PYTHON ES UN LENGUAJE INTERPRETADO QUE ESTA INSTALADO EN LA MAYORIA DE LAS
 # DISTRIBUCIONES DE LINUX
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-# +-PARA VERIFICAR SI ETA INSTALADO Y QUE VERSION TENEMOS BASTA CON ESCRIBIR
+# +-PARA VERIFICAR SI ESTA INSTALADO Y QUE VERSION TENEMOS BASTA CON ESCRIBIR
 # ctrl+alt+t->abre la terminal o si estas vscode ctrl + j
-# python3 
+# python3
 # esto mostrara la version instalada en nuestro sistema
 # ctrl+d la cierra
-
 
 
 print("Hello Python world!")
@@ -17,11 +16,11 @@ print(message)
 ###################################################################################
 # a pesar de ser un lenguaje interpretado de igualmanera se compila
 
-# python3 -m py_compile "nombreDelArchivo.py" 
+# python3 -m py_compile "nombreDelArchivo.py"
 
-# si desea mostrar en consola el resultado puede ejecutar 
+# si desea mostrar en consola el resultado puede ejecutar
 
-# python3 nombreDelArchivo.py 
+# python3 nombreDelArchivo.py
 
 # QUE PASA A FONDO CUANDO SE EJECUTA UN PROGRAMA EN PYTHON
 
@@ -36,4 +35,3 @@ print(message)
 # ¡Mundo python!” no es código de Python y muestra esa frase en otro color determinado. Esta
 # característica se llama resaltado de sintaxis y es bastante útil cuando comienza a escribir
 # sus propios programas.
-
