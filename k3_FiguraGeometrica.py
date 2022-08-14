@@ -20,7 +20,7 @@ class FiguraGeometrica:
     @ancho.setter#este es un metodo set
     def ancho(self, ancho):
         if self._validar_valor(ancho):
-           self._ancho = ancho
+            self._ancho = ancho
         else:
             print(f'Valor erroneo Ancho: {ancho}')
 
