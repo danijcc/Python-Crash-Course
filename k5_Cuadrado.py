@@ -1,4 +1,4 @@
-#carpeta 12 video 5,6
+#carpeta 12 video 3,4,5,6
 from k3_FiguraGeometrica import FiguraGeometrica
 from k4_Color import Color
 

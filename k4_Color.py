@@ -1,4 +1,4 @@
-#carpeta 12 video 1
+#carpeta 12 video 3,4,5,6
 class Color:
     def __init__(self, color):
         self.color = color
