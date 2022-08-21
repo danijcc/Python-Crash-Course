@@ -16,7 +16,7 @@
 condicion = False
 
 if condicion == True:
-    print('Condicion verdadera')
+   print('Condicion verdadera')
 elif condicion == False: 
     print('Condicion falsa')
 else:
