@@ -16,7 +16,7 @@ class MiClase:
 #lo podemos hacer direcctamente
 print(MiClase.variable_clase)
 
-#para acceder a la variable de insancia si debemos crear un objeto
+#para acceder a la variable de intancia si debemos crear un objeto
 miClase = MiClase('valor variable instancia')
 print(miClase.variable_instancia)
 #tambien podemos recuparar el valor de la variable de clase 
