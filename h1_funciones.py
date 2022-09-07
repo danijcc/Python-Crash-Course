@@ -32,16 +32,20 @@ print(f'variable {nombre} desde fuera de la funcion')
 
 
 def mi_funcion(nombre, apellido):  # 2 estos parentesis reciben parametros
-    # mediante las variables que declaremos
-    # en nuestra funcion
+                                   # mediante las variables que declaremos
+                                   # para el uso exclusivo de nuestra funcion
     print('saludos desde mi funcion')
     print(f'Nombre: {nombre}, Apellido: {apellido}')  # 3
 
 
 # debemos llamar la funcion
-# 1 estos parentesis envian argumentos o parametros
-mi_funcion('Juan', 'Perez')
+# 1 estos parentesis envian argumentos 
 # a las variable de nuestra funcion
+mi_funcion('Juan', 'Perez')
+
+#Parametros = son las variables de la funcion 
+#Argumentos = es la informacion que vamos a enviar o asignar a la variable
+#             o parametro de mi funcion 
 
 #######################funcion sumar##################################
 
