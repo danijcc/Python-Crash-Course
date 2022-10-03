@@ -10,6 +10,10 @@ class Producto:
         self._nombre = nombre
         self._precio = precio
 
+    @property
+    def precio(self):
+        return self._precio
+
     def __str__(self):
         return f'Id Producto: {self._id_producto}, Nombre: {self._nombre}, Precio: {self._precio}'
 
