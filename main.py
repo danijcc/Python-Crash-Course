@@ -1,0 +1,333 @@
+from kivy.lang import Builder
+from kivymd.app import MDApp
+from kivymd.uix.dialog import MDDialog
+from kivymd.uix.button import MDFlatButton
+from kivy.core.window import Window
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.label import Label
+from kivy.uix.screenmanager import Screen
+from kivy.uix.textinput import TextInput
+#set windows size
+Window.size=(720,1800)
+
+KV='''
+Screen:
+    ScrollView:
+        GridLayout:
+            id: container_y
+            size_hint_y: None
+            cols: 1
+            row_default_height: root.height*0.2
+            height: self.minimum_height
+            MDCard:
+                size_hint: None, None
+                size:720,1800
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                elevation: 10
+                padding: 50
+                spacing: 35
+                orientation : 'vertical'
+                multiline: False
+                MDIcon:
+                    icon: 'engine'
+                    icon_color: 1,0,0,0
+                    halign: 'center'
+                    font_size: 130
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                MDLabel:
+                    text: "Calcular Relacion de Compresion." 
+                    id: text
+                    icon_left: "circle-slice-4"
+                    width: 230
+                    font_size: 25
+                    halign: 'center'
+                MDLabel:
+                    text: 'Utilizar puntos no comas para expresar los decimales                                                                                      ejemplo 4.250" en vez de 4,250"' 
+                    width: 220
+                    font_size: 20
+                    halign: 'center'
+                MDTextField:
+                    id: valor1
+                    icon_left: "circle-slice-4"
+                    hint_text: "Diametro del cilindro"
+                    helper_text: "Ingrese este dato en Pulgadas Cubicas"
+                    foreground_color: 1,0,1,1
+                    size_hint_x: None
+                    width: 220
+                    font_size: 35
+                    pos_hint: {"center_x": 0.5, "center_y": 0.1}
+                    mode: "fill"
+                    fill_color: 0, 0, 0, .4
+                    size_hint_x: .8
+                    required: True
+                MDTextField:
+                    id: stroke
+                    icon_left: "arrow-expand-vertical"
+                    hint_text: "Carrera o Stroke del Piston"
+                    helper_text: "Ingrese este dato en Pulgadas Cubicas"
+                    foreground_color: 1,0,1,1
+                    size_hint_x: None
+                    width: 220
+                    font_size: 35
+                    pos_hint: {"center_x": 0.5}
+                    mode: "fill"
+                    fill_color: 0, 0, 0, .4
+                    size_hint_x: .8
+                    required: True
+                MDTextField:
+                    id: valor2
+                    icon_left: "arrow-split-horizontal"
+                    hint_text: "Volumen de la camara"
+                    helper_text: "Ingrese este dato en Centimetros Cubicos"
+                    foreground_color: 1,0,1,1
+                    size_hint_x: None
+                    width: 220
+                    font_size: 35
+                    pos_hint: {"center_x": 0.5}
+                    mode: "fill"
+                    fill_color: 0, 0, 0, .4
+                    size_hint_x: .8
+                    required: True
+                MDTextField:
+                    id: valor6
+                    icon_left: "circle-slice-4"
+                    hint_text: "Diametro de la empacadura"
+                    helper_text: "Ingrese este dato en Pulgadas Cubicas"
+                    foreground_color: 1,0,1,1
+                    size_hint_x: None
+                    width: 220
+                    font_size: 35
+                    pos_hint: {"center_x": 0.5}
+                    mode: "fill"
+                    fill_color: 0, 0, 0, .4
+                    size_hint_x: .8
+                    required: True
+                MDTextField:
+                    id: valor3
+                    icon_left: "arrow-up-down-bold"
+                    hint_text: "Espesor de la Empacadura"
+                    helper_text: "Ingrese este dato en Pulgadas Cubicas"
+                    foreground_color: 1,0,1,1
+                    size_hint_x: None
+                    width: 220
+                    font_size: 35
+                    pos_hint: {"center_x": 0.5}
+                    mode: "fill"
+                    fill_color: 0, 0, 0, .4
+                    size_hint_x: .8
+                    required: True
+                MDTextField:
+                    id: valor4
+                    icon_left: "arrow-up-down-bold"
+                    hint_text: "Espesor entre el piston y el punto muerto superior"
+                    helper_text: "Ingrese este dato en Pulgadas Cubicas"
+                    foreground_color: 1,0,1,1
+                    size_hint_x: None
+                    width: 220
+                    font_size: 35
+                    pos_hint: {"center_x": 0.5}
+                    mode: "fill"
+                    fill_color: 0, 0, 0, .4
+                    size_hint_x: .9
+                    required: True
+                MDTextField:
+                    id: valor5
+                    icon_left: "arrow-split-horizontal"
+                    hint_text: "Volumen de la corona de la cabeza del piston"
+                    helper_text: "Ingrese este dato en Centimetros Cubicos"
+                    foreground_color: 1,0,1,1
+                    size_hint_x: None
+                    width: 220
+                    font_size: 35
+                    pos_hint: {"center_x": 0.5}
+                    mode: "fill"
+                    fill_color: 0, 0, 0, .4
+                    size_hint_x: .9
+                    required: True
+                MDFillRoundFlatButton:
+                    text: "CALCULAR RELACION DE COMPRESION"
+                    font_size: 25
+                    pos_hint: {"center_x": 0.5}
+                    on_press: app.garage()
+                MDLabel:
+                    text: "------------------------------------------RESULTADOS-----------------------------------------" 
+                    width: 220
+                    font_size: 20
+                    halign: 'center'
+                    theme_text_color: "Custom"
+                    text_color: 39, 255, 0 
+                MDLabel:
+                    id: volumen1
+                    icon_left: "circle-slice-4"
+                    width: 220
+                    font_size: 16
+                    halign: 'left'
+                    hint_text: "required = True"  
+                    multiline: False
+                    theme_text_color: "Custom"
+                    text_color: 0, 0, 1, 1
+                MDLabel:
+                    id: volumen2
+                    icon_left: "circle-slice-4"
+                    width: 220
+                    font_size: 16
+                    halign: 'left'
+                    hint_text: "required = True" 
+                    multiline: False
+                    theme_text_color: "Custom"
+                    text_color: 0, 0, 1, 1
+                MDLabel:
+                    id: volumen3
+                    icon_left: "circle-slice-4"
+                    width: 220
+                    font_size: 16
+                    halign: 'left'
+                    hint_text: "required = True" 
+                    multiline: False
+                    theme_text_color: "Custom"
+                    text_color: 0, 0, 1, 1
+                MDLabel:
+                    id: volumen4
+                    icon_left: "circle-slice-4"
+                    width: 220
+                    font_size: 16
+                    halign: 'left'
+                    hint_text: "required = True" 
+                    multiline: False
+                    theme_text_color: "Custom"
+                    text_color: 0, 0, 1, 1
+                MDLabel:
+                    id: volumen5
+                    icon_left: "circle-slice-4"
+                    width: 220
+                    font_size: 16
+                    halign: 'left'
+                    hint_text: "required = True"
+                    multiline: False
+                    theme_text_color: "Custom"
+                    text_color: 0, 0, 1, 1
+                MDLabel:
+                    text: "-------------------------------------------------------------------------------------------------------" 
+                    width: 220
+                    font_size: 20
+                    halign: 'center'
+                    theme_text_color: "Custom"
+                    text_color: 39, 255, 0 
+                MDLabel:
+                    id: plano
+                    icon_left: "circle-slice-4"
+                    width: 220
+                    font_size: 16
+                    halign: 'left'
+                    hint_text: "required = True" 
+                    multiline: False
+                    theme_text_color: "Custom"
+                    text_color: 0, 0, 1, 1
+                MDLabel:
+                    id: domo
+                    icon_left: "circle-slice-4"
+                    width: 220
+                    font_size: 18
+                    halign: 'left'
+                    hint_text: "required = True"  
+                    multiline: False
+                    theme_text_color: "Custom"
+                    text_color: 0, 0, 1, 1
+                MDLabel:
+                    text: "------------------------------------------------------------------------------------------------------desing by Dani Colmenares" 
+                    id: text
+                    icon_left: "circle-slice-4"
+                    width: 220
+                    font_size: 20
+                    halign: 'center'
+                    hint_text: "required = True"
+                    theme_text_color: "Custom"
+                    text_color: 39, 255, 0 
+                MDLabel:
+                    text: "Contacto: danicolmenares7@gmail.com" 
+                    id: text
+                    icon_left: "circle-slice-4"
+                    width: 220
+                    font_size: 20
+                    halign: 'center'
+                    hint_text: "required = True"
+                    theme_text_color: "Custom"
+                    text_color: 0, 0, 1, 1
+
+
+'''
+
+class Garage7App(MDApp):
+    
+
+    def build(self):
+        return Builder.load_string(KV)
+
+    def garage(self):
+        #almacenar el valor del input del usuario en una variable donde valor.text
+        #es igual al id de MDTextField:
+        valor1 = self.root.ids.valor1.text
+        stroke = self.root.ids.stroke.text
+        valor2 = self.root.ids.valor2.text
+        valor6 = self.root.ids.valor6.text
+        valor3 = self.root.ids.valor3.text
+        valor4 = self.root.ids.valor4.text
+        valor5 = self.root.ids.valor5.text
+
+        
+        v1 = float(valor1) * float(valor1) * float(stroke)* 0.7854
+        v2 = float(valor2) * 1 / 16.3871 
+        v3 = float(valor6) * float(valor6) * float(valor3) * 0.7854
+        v4 = float(valor1) * float(valor1) * float(valor4) * 0.7854
+        v5 = float(valor5)* 1 / 16.3871
+ 
+        v1 = round(v1,4)
+        v2 = round(v2,4)
+        v3 = round(v3,4)
+        v4 = round(v4,4)
+        v5 = round(v5,4)
+        
+
+        volumen_de_la_camara_plano =  v2+v3+v4+v5
+        volumen_del_cilindro_plano =  v1+v2+v3+v4+v5 
+        volumen_de_la_camara_domo =  v2+v3+v4-v5
+        volumen_del_cilindro_domo =  v1+v2+v3+v4-v5 
+
+        resultado_piston_plano = volumen_del_cilindro_plano / volumen_de_la_camara_plano
+        resultado_piston_domo = volumen_del_cilindro_domo / volumen_de_la_camara_domo 
+
+        resultado_piston_plano = round(resultado_piston_plano,4)
+        resultado_piston_domo = round(resultado_piston_domo,4)
+
+
+        #convertir a str los valores resultante ya que las etiqueta solo admite str y
+        #concatenar valores con sus respectivos resultados
+        v1 = 'VOLUMEN DEL CILINDRO:..........................................................................................'+str(v1)
+        v2 = 'VOLUMEN DE LA CAMARA:........................................................................................'+str(v2)
+        v3 = 'VOLUMEN DE LA EMPACADURA:...............................................................................'+str(v3)
+        v4 = 'VOLUMEN ENTRE PISTON Y PUNTO MUERTO SUPERIOR:.......................................'+str(v4)
+        v5 = 'VOLUMEN CABEZA DEL PISTON:...............................................................................'+str(v5)
+        resultado_piston_plano = 'RELACION DE COMPRESION PARA PISTON FLAT O PLANO:...................'+str(resultado_piston_plano) + ' A 1'
+        resultado_piston_domo = 'RELACION DE COMPRESION PARA PISTON DOME O DOMO:..................'+str(resultado_piston_domo) + ' A 1'
+  
+        #mostrar el resultado almacenado en las variables en una etiqueta label MDLabel:  
+        #donde valor.text es valor del id: de la etiqueta 
+        self.root.ids.volumen1.text = v1
+        self.root.ids.volumen2.text = v2
+        self.root.ids.volumen3.text = v3
+        self.root.ids.volumen4.text = v4
+        self.root.ids.volumen5.text = v5
+        self.root.ids.plano.text = resultado_piston_plano
+        self.root.ids.domo.text = resultado_piston_domo
+
+    def close(self):
+        self.dialog.dismiss()
+
+Garage7App().run()        
+                
+            
+
+
+
+       
+
